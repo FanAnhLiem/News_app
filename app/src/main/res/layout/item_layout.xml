@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp"
+    android:background="#00000000">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="1dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="5dp"
+        android:id="@+id/cardview">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#757575">
+
+            <!-- Title TextView -->
+            <TextView
+                android:id="@+id/mainheading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="19sp"
+                android:ellipsize="end"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:paddingBottom="8dp" />
+
+            <!-- Description TextView (Below Title) -->
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textColor="#DEDEDE"
+                android:textSize="15sp"
+                android:layout_below="@id/mainheading"
+                android:layout_alignParentStart="true"
+                android:paddingBottom="9dp" />
+
+            <!-- ImageView (Below Description) -->
+            <ImageView
+                android:id="@+id/imageview"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="Article Image"
+                android:layout_below="@id/content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="8dp" />
+
+            <!-- LinearLayout (Below ImageView) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/imageview"
+                android:orientation="horizontal">
+
+                <!-- Author TextView (Align left) -->
+                <TextView
+                    android:id="@+id/author"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="author"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:gravity="start"
+                    android:paddingBottom="9dp" />
+
+                <!-- Time TextView (Align right) -->
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="time"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    android:gravity="end"
+                    android:layout_gravity="end"
+                    android:paddingBottom="9dp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

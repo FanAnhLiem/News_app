@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="customTablapout"
+        parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16sp</item> <!-- Kích thước chữ -->
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

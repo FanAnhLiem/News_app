@@ -43,10 +43,9 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if (hasFocus) {
-                    // Chuyển sang SearchActivity khi người dùng click vào SearchView
                     Intent intent = new Intent(MenuActivity.this, SearchActivity.class);
                     startActivity(intent);
-                    searchView.clearFocus(); // Đảm bảo không còn focus ở SearchView hiện tại
+                    searchView.clearFocus();
                 }
             }
         });
@@ -89,7 +88,6 @@ public class MenuActivity extends AppCompatActivity {
 
 
 
-    // 3. Xử lý click vào các icon theo dõi
     private void handleFollowIcons() {
         fbIcon.setOnClickListener(v -> {
             String facebookUrl = "https://www.facebook.com/profile.php?id=100028145915338";
@@ -98,14 +96,13 @@ public class MenuActivity extends AppCompatActivity {
         });
 
         githubIcon.setOnClickListener(v -> {
-            String githubUrl = "https://github.com";
+            String githubUrl = "https://github.com/FanAnhLiem";
             Intent githubIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(githubUrl));
             startActivity(githubIntent);
         });
 
     }
 
-    // 4. Xử lý Navigation giữa Trang chủ và Menu
     private void handleNavigation() {
         navHome.setOnClickListener(v -> {
             Intent homeIntent = new Intent(MenuActivity.this, MainActivity.class);

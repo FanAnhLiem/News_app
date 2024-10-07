@@ -44,7 +44,6 @@ public class CreateDatabase extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // Thêm người dùng vào database
     public boolean registerUser(String email, String gender, String username, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -52,7 +51,7 @@ public class CreateDatabase extends SQLiteOpenHelper {
         values.put(COLUMN_GENDER, gender);
         values.put(COLUMN_USERNAME, username);
         values.put(COLUMN_PASSWORD, password);
-        values.put(COLUMN_ROLE, "user");  // Mặc định người dùng là "user"
+        values.put(COLUMN_ROLE, "user");  
 
         long result = db.insert(TABLE_USER, null, values);
         return result != -1;

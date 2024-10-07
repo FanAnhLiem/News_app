@@ -26,24 +26,21 @@ public class AdminActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admin_layout); // Sử dụng giao diện admin_layout
+        setContentView(R.layout.admin_layout); 
 
-        // Ánh xạ các thành phần từ layout
         userListView = findViewById(R.id.userListView);
         logoutButton = findViewById(R.id.logoutButton);
         databaseHelper = new CreateDatabase(this);
 
         loadUserList();
 
-        // Xử lý sự kiện khi Admin nhấn nút "Đăng xuất"
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Xóa thông tin đăng nhập khỏi SharedPreferences
                 SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("isLoggedIn", false);  // Đặt trạng thái đăng nhập thành false
-                editor.putString("role", ""); // Xóa vai trò của người dùng (admin hoặc user)
+                editor.putBoolean("isLoggedIn", false);
+                editor.putString("role", ""); 
                 editor.apply();
 
                 Intent logoutIntent = new Intent(AdminActivity.this, Login.class);
@@ -56,7 +53,6 @@ public class AdminActivity extends AppCompatActivity {
 
     }
 
-    // Hàm load danh sách người dùng từ database
     private void loadUserList() {
         Cursor cursor = databaseHelper.getAllUsers();
         if (cursor.getCount() == 0) {
@@ -77,7 +73,6 @@ public class AdminActivity extends AppCompatActivity {
             userList.add(user);
         }
 
-        // Cài đặt adapter cho ListView
         userAdapter = new UserAdapter(this, userList);
         userListView.setAdapter(userAdapter);
     }
